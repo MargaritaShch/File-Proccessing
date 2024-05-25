@@ -18,9 +18,10 @@ public class FileProcessing {
             Map<String, Integer> wordFrequencies = wordCounter.getWordFrequencies();
             int maxFrequency = wordCounter.getMaxFrequency();
             List<String> mostFrequentWords = wordCounter.getMostFrequentWords(maxFrequency);
+            int totalWords = wordCounter.getTotalWords();
 
             FileUtils.printSortedWords(sortedWords);
-            FileUtils.printWordFrequencies(wordFrequencies);
+            FileUtils.printWordFrequencies(wordFrequencies, totalWords);
             FileUtils.printMostFrequentWords(mostFrequentWords, maxFrequency);
 
         } catch (IOException e) {

@@ -2,12 +2,14 @@ import java.util.*;
 
 public class WordCounter {
     private final Map<String, Integer> wordCount = new HashMap<>();
+    private int totalWords = 0;
 
     public void countWords(List<String> words) {
         for (String word : words) {
             if (!word.isEmpty()) {
                 word = word.toLowerCase();
                 wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
+                totalWords++;
             }
         }
     }
@@ -35,5 +37,9 @@ public class WordCounter {
             }
         }
         return mostFrequentWords;
+    }
+
+    public int getTotalWords() {
+        return totalWords;
     }
 }

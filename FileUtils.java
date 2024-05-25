@@ -21,10 +21,11 @@ public class FileUtils {
         }
     }
 
-    public static void printWordFrequencies(Map<String, Integer> wordFrequencies) {
+    public static void printWordFrequencies(Map<String, Integer> wordFrequencies,  int totalWords) {
         System.out.println("\nЧастота вхождения слов:");
         for (Map.Entry<String, Integer> entry : wordFrequencies.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
+            double percentage = (entry.getValue() / (double) totalWords) * 100;
+            System.out.printf("%s: %d (%.2f%%)%n", entry.getKey(), entry.getValue(), percentage);
         }
     }
 
